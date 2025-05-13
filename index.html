@@ -6,11 +6,11 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #cbc3e3;
+            background-color: #715BB2;
             padding: 50px;
         }
         h1 {
-            color: #ff3366;
+            color: #87cefa;
         }
         button {
             padding: 15px 25px;
@@ -20,22 +20,22 @@
             border-radius: 8px;
             cursor: pointer;
         }
-        .yes { background-color: #66ff66; }
-        .no { background-color: #ff6666; }
+        .yes { background-color: ##caffbf; }
+        .no { background-color: ##caffbf; }
     </style>
 </head>
 <body>
-    <h1>Will you be my girlfriend? ❤️</h1>
-    <button class="yes" onclick="answer('yes')">Yes</button>
-    <button class="no" onclick="answer('no')">No</button>
+    <h1>Can I be your boyfriend?</h1>
+    <button class="duh" onclick="answer('yes')">Yes</button>
+    <button class="obviously" onclick="answer('no')">No</button>
 
     <p id="response" style="font-size: 24px; margin-top: 30px;"></p>
 
     <script>
         function answer(choice) {
             const response = document.getElementById("response");
-            if (choice === "yes") {
-                response.innerHTML = "Yay! ❤️ I'm so happy!";
+            if (choice === "duh" || choice === "obviously") {
+                response.innerHTML = "❤️ You are the most amazing girl in the world and I can't wait to start our journey! ❤️";
             } else {
                 response.innerHTML = "That's okay. You're still amazing!";
             }
