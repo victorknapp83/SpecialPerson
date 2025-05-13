@@ -5,13 +5,36 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #715BB2;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
         }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .side-image {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .main-content {
+            max-width: 600px;
+            margin: 0 20px;
+            text-align: center;
+        }
+
         h1 {
             color: #87cefa;
         }
+
         button {
             padding: 15px 25px;
             font-size: 18px;
@@ -20,54 +43,56 @@
             border-radius: 8px;
             cursor: pointer;
         }
+
         .yes { background-color: #caffbf; }
         .no { background-color: #caffbf; }
 
-        /* Image layout styles */
-        .image-container {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .side-images {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-
-        .side-images img {
-            width: 320px;
-            height: auto;
-            border-radius: 10px;
+        .bottom-image {
+            margin-top: 30px;
         }
 
         .bottom-image img {
-            width: 500px;
+            width: 100%;
+            max-width: 500px;
             height: auto;
             border-radius: 12px;
+        }
+
+        #response {
+            font-size: 24px;
+            margin-top: 30px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .side-image {
+                display: none; /* Hide side images on smaller screens */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Can I be your boyfriend?</h1>
-    <button class="yes" onclick="answer('yes')">Duh</button>
-    <button class="no" onclick="answer('no')">Absolutely</button>
+    <div class="wrapper">
+        <img src="WebsiteLeft.png" class="side-image" alt="Left Image">
 
-    <p id="response" style="font-size: 24px; margin-top: 30px;"></p>
+        <div class="main-content">
+            <h1>Can I be your boyfriend?</h1>
+            <button class="yes" onclick="answer('yes')">Duh</button>
+            <button class="no" onclick="answer('no')">Absolutely</button>
 
-    <!-- Image section -->
-    <div class="image-container">
-        <div class="side-images">
-            <img src="WebsiteLeft.png">
-            <img src="WebsiteRight.png">
+            <p id="response"></p>
+
+            <div class="bottom-image">
+                <img src="otter.png" alt="Otter">
+            </div>
         </div>
-        <div class="bottom-image">
-            <img src="otter.png">
-        </div>
+
+        <img src="WebsiteRight.png" class="side-image" alt="Right Image">
     </div>
 
     <script>
