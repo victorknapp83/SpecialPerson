@@ -22,6 +22,34 @@
         }
         .yes { background-color: #caffbf; }
         .no { background-color: #caffbf; }
+
+        /* Image layout styles */
+        .image-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-images {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .side-images img {
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .bottom-image img {
+            width: 300px;
+            height: auto;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -30,6 +58,17 @@
     <button class="no" onclick="answer('no')">Absolutely</button>
 
     <p id="response" style="font-size: 24px; margin-top: 30px;"></p>
+
+    <!-- Image section -->
+    <div class="image-container">
+        <div class="side-images">
+            <img src="left.jpg" alt="Left cute pic">
+            <img src="right.jpg" alt="Right cute pic">
+        </div>
+        <div class="bottom-image">
+            <img src="bhttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fp%2FDEQaolbSqd1%2F&psig=AOvVaw3ovQ06SAy21WNKZzyemTdI&ust=1747203419653000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJiuoozmn40DFQAAAAAdAAAAABAc" alt="Big pic at the bottom">
+        </div>
+    </div>
 
     <script>
         function answer(choice) {
