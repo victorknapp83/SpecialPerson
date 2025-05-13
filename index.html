@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .yes { background-color: #66ff66; }
+        .no { background-color: #ff6666; }
+    </style>
+</head>
+<body>
+    <h1>Will you be my girlfriend? ❤️</h1>
+    <button class="yes" onclick="answer('yes')">Yes</button>
+    <button class="no" onclick="answer('no')">No</button>
+
+    <p id="response" style="font-size: 24px; margin-top: 30px;"></p>
+
+    <script>
+        function answer(choice) {
+            const response = document.getElementById("response");
+            if (choice === "yes") {
+                response.innerHTML = "Yay! ❤️ I'm so happy!";
+            } else {
+                response.innerHTML = "That's okay. You're still amazing!";
+            }
+        }
+    </script>
+</body>
+</html>
