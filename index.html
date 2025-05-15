@@ -38,17 +38,15 @@
             margin: 20px 0;
         }
 
-        label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .option {
+            margin: 10px 0;
             font-size: 20px;
             color: #ffd6e0;
-            cursor: pointer;
         }
 
         input[type="checkbox"] {
             transform: scale(1.5);
+            margin-right: 10px;
             accent-color: #ffd6e0;
             cursor: pointer;
         }
@@ -78,10 +76,18 @@
     <h1>Can I be your boyfriend?</h1>
     <img src="otter.png" alt="Cute Proposal" class="cute-img">
 
-    <label>
-        <input type="checkbox" id="boyfriendCheckbox" onchange="showMessage()">
-        Yes, of course 💘
-    </label>
+    <div class="option">
+        <label>
+            <input type="checkbox" id="optionYes" onchange="handleCheckbox('yes')">
+            Duh 💕
+        </label>
+    </div>
+    <div class="option">
+        <label>
+            <input type="checkbox" id="optionNo" onchange="handleCheckbox('no')">
+            Absolutely 💘
+        </label>
+    </div>
 
     <p id="response"></p>
 
@@ -89,13 +95,26 @@
 </div>
 
 <script>
-    function showMessage() {
-        const checkbox = document.getElementById("boyfriendCheckbox");
+    function handleCheckbox(option) {
+        const yesBox = document.getElementById("optionYes");
+        const noBox = document.getElementById("optionNo");
         const response = document.getElementById("response");
-        if (checkbox.checked) {
-            response.textContent = "❤️ You are the most beautiful girl in the world and I cannot wait for what the future holds! ❤️";
+
+        // Uncheck the other box when one is selected
+        if (option === "yes") {
+            noBox.checked = false;
+            if (yesBox.checked) {
+                response.textContent = "❤️ You are the most beautiful girl in the world and I cannot wait for what the future holds! ❤️";
+            } else {
+                response.textContent = "";
+            }
         } else {
-            response.textContent = "";
+            yesBox.checked = false;
+            if (noBox.checked) {
+                response.textContent = "💖 I'm so happy that I can officially call you mine! You have the sweetest heart and an even prettier smile! MWAH 💖";
+            } else {
+                response.textContent = "";
+            }
         }
     }
 </script>
