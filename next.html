@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Your Turn!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #715BB2;
+            margin: 0;
+            padding: 0;
+            background: #715BB2;
+            font-family: 'Quicksand', sans-serif;
+            color: #ffd6e0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center; /* Ensures centered text */
+            min-height: 100vh;
         }
 
-        textarea {
-            width: 80%;
-            max-width: 600px;
-            height: 200px;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
+        .main {
+            text-align: center;
+            padding: 20px;
+            max-width: 700px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ffd6e0;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         h2 {
-            color: #87cefa;
-            max-width: 80%; /* Ensures the text wraps within the page */
-            line-height: 1.5;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #fff0f5;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            font-size: 16px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            resize: none;
         }
 
         .back-button {
@@ -39,29 +57,32 @@
             color: #333;
             padding: 12px 20px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 20px;
             font-size: 16px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
         }
 
-        h1 {
-            font-size: 40px;
-            color: #87cefa;
-            margin-bottom: 20px;
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ffdde4;
         }
     </style>
 </head>
 <body>
     <a href="index.html" class="back-button">⬅️ Back</a>
 
-    <!-- Big title at the top -->
-    <h1>Now that you're my girlfriend!</h1>
+    <div class="main">
+        <h1>Now that you're my girlfriend!</h1>
 
-    <h2>
-        I don't have a backend, so I need you to screenshot this slide and send it to me. 
-        But what I need from you is your favorite flowers, favorite candy, 
-        and address so you can receive said gifts. 💌
-    </h2>
-    <textarea placeholder="Write your message here..."></textarea>
+        <h2>
+            I don't have a backend, so I need you to screenshot this slide and send it to me. <br>
+            But what I need from you is your favorite flowers, favorite candy, <br>
+            and address so you can receive said gifts. 💌
+        </h2>
+
+        <textarea placeholder="Write your message here..."></textarea>
+        <p class="note">🌸🍬📦</p>
+    </div>
 </body>
 </html>
