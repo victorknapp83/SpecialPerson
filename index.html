@@ -1,125 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Will You Be My Girlfriend?</title>
+    <meta charset="UTF-8">
+    <title>Can I Be Your Boyfriend?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #715BB2;
             margin: 0;
             padding: 0;
-        }
-
-        .wrapper {
+            background: #ffeafc;
+            font-family: 'Quicksand', sans-serif;
+            color: #444;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: flex-start;
             min-height: 100vh;
-            padding: 40px;
-            box-sizing: border-box;
-        }
-
-        .side-image {
-            width: 270px;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .main-content {
-            max-width: 600px;
-            margin: 0 20px;
-            text-align: center;
         }
 
         h1 {
-            color: #87cefa;
+            font-family: 'Pacifico', cursive;
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        .main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cute-img {
+            max-width: 100%;
+            width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin: 20px 0;
         }
 
         button {
-            padding: 15px 25px;
-            font-size: 18px;
+            padding: 12px 24px;
             margin: 10px;
+            font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 30px;
             cursor: pointer;
+            background-color: #ffd6e0;
+            color: #880e4f;
+            transition: all 0.3s ease;
         }
 
-        .yes { background-color: #caffbf; }
-        .no { background-color: #caffbf; }
-
-        .bottom-image {
-            margin-top: 30px;
-        }
-
-        .bottom-image img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 6px;
+        button:hover {
+            background-color: #ffbad2;
         }
 
         #response {
-            font-size: 24px;
-            margin-top: 30px;
-            color: white;
+            font-size: 20px;
+            color: #d6336c;
+            margin-top: 20px;
         }
 
         .next-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+            margin-top: 30px;
+            display: inline-block;
             background-color: #fcd5ce;
             color: #333;
-            padding: 12px 20px;
+            padding: 10px 18px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 20px;
             font-size: 16px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 900px) {
-            .wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .side-image {
-                display: none; /* Hide side images on smaller screens */
-            }
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <img src="WebsiteLeft.png" class="side-image" alt="Left Image">
 
-        <div class="main-content">
-            <h1>Can I be your boyfriend?</h1>
-            <button class="yes" onclick="answer('yes')">Duh</button>
-            <button class="no" onclick="answer('no')">Absolutely</button>
+<div class="main">
+    <h1>Can I be your boyfriend?</h1>
+    <img src="A_2D_digital_illustration_asks,_Can_I_be_your_boy.png" alt="Cute Proposal" class="cute-img">
 
-            <p id="response"></p>
-
-            <div class="bottom-image">
-                <img src="otter.png" alt="Otter">
-            </div>
-        </div>
-
-        <img src="WebsiteRight.png" class="side-image" alt="Right Image">
+    <div>
+        <button onclick="answer('yes')">Duh 💕</button>
+        <button onclick="answer('no')">Absolutely 💘</button>
     </div>
 
-    <!-- NEXT BUTTON -->
-    <a href="next.html" class="next-button">Next ➡️</a>
+    <p id="response"></p>
 
-    <script>
-        function answer(choice) {
-            const response = document.getElementById("response");
-            if (choice === "yes") {
-                response.innerHTML = "❤️ You are the most beautiful girl in the world and I can't wait to start our journey! ❤️";
-            } else {
-                response.innerHTML = "❤️ You really chose option 2 smh... Still excited to call you mine though! ❤️";
-            }
+    <a href="next.html" class="next-button">Next ➡️</a>
+</div>
+
+<script>
+    function answer(choice) {
+        const response = document.getElementById("response");
+        if (choice === "yes") {
+            response.textContent = "❤️ You are the most beautiful girl in the world and I can't wait to start our journey! ❤️";
+        } else {
+            response.textContent = "💖 You really chose option 2 smh... Still excited to call you mine though! 💖";
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
