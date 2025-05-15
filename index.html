@@ -38,20 +38,19 @@
             margin: 20px 0;
         }
 
-        button {
-            padding: 12px 24px;
-            margin: 10px;
-            font-size: 18px;
-            border: none;
-            border-radius: 30px;
+        label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            color: #ffd6e0;
             cursor: pointer;
-            background-color: #ffd6e0;
-            color: #880e4f;
-            transition: all 0.3s ease;
         }
 
-        button:hover {
-            background-color: #ffbad2;
+        input[type="checkbox"] {
+            transform: scale(1.5);
+            accent-color: #ffd6e0;
+            cursor: pointer;
         }
 
         #response {
@@ -79,10 +78,10 @@
     <h1>Can I be your boyfriend?</h1>
     <img src="otter.png" alt="Cute Proposal" class="cute-img">
 
-    <div>
-        <button onclick="answer('yes')">Duh 💕</button>
-        <button onclick="answer('no')">Absolutely 💘</button>
-    </div>
+    <label>
+        <input type="checkbox" id="boyfriendCheckbox" onchange="showMessage()">
+        Yes, of course 💘
+    </label>
 
     <p id="response"></p>
 
@@ -90,12 +89,13 @@
 </div>
 
 <script>
-    function answer(choice) {
+    function showMessage() {
+        const checkbox = document.getElementById("boyfriendCheckbox");
         const response = document.getElementById("response");
-        if (choice === "yes") {
+        if (checkbox.checked) {
             response.textContent = "❤️ You are the most beautiful girl in the world and I cannot wait for what the future holds! ❤️";
         } else {
-            response.textContent = "💖 I'm so happy that I can officially call you mine! You have the sweetest heart and an even prettier smile! MWAH 💖";
+            response.textContent = "";
         }
     }
 </script>
